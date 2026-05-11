@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  # ── .NET 8 API ──────────────────────────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: userdirectory-api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - Database__Path=/data/app.db
+      - Cors__AllowedOrigins__0=http://localhost:3000
+    volumes:
+      - db-data:/data
+    ports:
+      - "5000:5000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/swagger/index.html"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    restart: unless-stopped
+
+  # ── React Frontend ──────────────────────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: userdirectory-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  db-data:
+    driver: local
