@@ -1,0 +1,6 @@
+D:\Project\user-directory\backend\UserDirectory.Tests\obj\Debug\net8.0\UserDirectory.Tests.csproj.AssemblyReference.cache
+D:\Project\user-directory\backend\UserDirectory.Tests\obj\Debug\net8.0\MvcTestingAppManifest.json
+D:\Project\user-directory\backend\UserDirectory.Tests\obj\Debug\net8.0\UserDirectory.Tests.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\user-directory\backend\UserDirectory.Tests\obj\Debug\net8.0\UserDirectory.Tests.AssemblyInfoInputs.cache
+D:\Project\user-directory\backend\UserDirectory.Tests\obj\Debug\net8.0\UserDirectory.Tests.AssemblyInfo.cs
+D:\Project\user-directory\backend\UserDirectory.Tests\obj\Debug\net8.0\UserDirectory.Tests.csproj.CoreCompileInputs.cache
